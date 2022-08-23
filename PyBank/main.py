@@ -9,6 +9,10 @@ months_total = []
 profit_total = []
 monthly_change_profit = []
 
+monthly_change = 0
+monthly_change_total = 0
+profit_start = 0
+
 with open(budget_csv) as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=",")
     csv_header = next(csv_file)
@@ -21,11 +25,13 @@ with open(budget_csv) as csv_file:
         profit_total.append(int(row[1]))
         profit_sum = sum(profit_total)
 
+        
+
 
 print("Financial Analysis")
 print("------------------------------------------------------")
 print(f'Total Months: {months_sum}')
 print(f'Total: ${profit_sum}')
-print(f'Average Change:')
+print(f'Average Change: ${average_change}')
 print(f'Greatest Increase in Profits:')
 print(f'Greatest Decrease in Profits:')
